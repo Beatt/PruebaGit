@@ -6,7 +6,79 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body ng-app="AppBundle">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+        <script>
+            miApp = angular.module("AppBundle", []);
+
+            miApp.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('//');
+                $interpolateProvider.endSymbol('//');
+            });
+
+            miApp.controller('MiOtroControllador', function($scope) {
+
+                $scope.persona = "Pdre";
+
+            });
+
+            miApp.controller('MiController', function($scope) {
+
+                $scope.personas;
+
+               /* $scope.personas = [{
+                    nombre: "juan",
+                    edad: 33
+                },
+                    {
+                        nombre: "raul",
+                        edad: 22
+                    },
+                    {
+                        nombre: "juan",
+                        edad: 33
+                    },
+                    {
+                        nombre: "raul",
+                        edad: 22
+                    },
+                    {
+                        nombre: "juan",
+                        edad: 33
+                    },
+                    {
+                        nombre: "raul",
+                        edad: 22
+                    }
+                ];*/
+
+
+                //$scope.entrada = $scope.personas[0].nombre.toUpperCase();
+
+                console.log($scope.entrada);
+
+                $scope.agregarPersona = function () {
+
+                    $scope.personas.push(
+                            {
+                                nombre: $scope.nombre,
+                                edad: $scope.edad
+                            }
+                    );
+
+                }
+
+                $scope.eliminarPersona = function(index) {
+
+                    console.log(index);
+                    $scope.personas.splice(index, 1);
+
+                }
+
+
+            });
+
+        </script>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -15,7 +15,38 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir') . '/..'),
         ));
     }
+
+
+    /**
+     * @Route("/prueba", name="prueba")
+     */
+    public function prueba()
+    {
+
+        $datos = array(
+            'personas' => array(
+
+                array(
+
+                    'nombre' => 'Juanito',
+                    'edad' => 33
+
+                ),
+
+                array(
+                    'nombre' => 'Juan',
+                    'edad' => 22
+                )
+            )
+        );
+
+
+        return $this->render('default/prueba.html.twig', array(
+            'datos' => $datos
+        ));
+    }
+
 }

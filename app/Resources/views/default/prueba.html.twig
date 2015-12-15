@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div>
+
+        <h2>Servidor</h2>
+
+        {{ datos['personas'][0].nombre }}
+
+        {{ datos['personas'][1].nombre }}
+
+        {{ datos['personas']|json_encode() }}
+
+
+    </div>
+
+    <div ng-controller="MiController">
+
+        <h2>Pruea</h2>
+
+        <input type="text" ng-model="nombre" placeholder="nombre">
+
+        <input type="text" ng-model="edad" placeholder="edad">
+
+        <button ng-click="agregarPersona()">Agregar</button>
+
+        <div>
+
+
+            <div ng-init="personas = {{ datos['personas']|json_encode() }}"></div>
+
+            <div
+                 ng-repeat="persona in personas"
+            >
+                // persona.nombre // // persona.edad//
+                <button ng-click="eliminarPersona($index)">Eliminar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div ng-controller="MiOtroControllador">
+
+        <h2>Otro controlador</h2>
+
+        Hola // persona //
+
+    </div>
+
+{% endblock %}

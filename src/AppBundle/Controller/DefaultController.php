@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -47,6 +48,17 @@ class DefaultController extends Controller
         return $this->render('default/prueba.html.twig', array(
             'datos' => $datos
         ));
+    }
+
+
+    /**
+     * @Route("editar_persona", name="editar_persona")
+     */
+    public function editarPersona(Request $request)
+    {
+
+        return new Response("Editando Persona");
+
     }
 
 }

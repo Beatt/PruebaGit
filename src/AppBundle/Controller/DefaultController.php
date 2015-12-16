@@ -57,7 +57,7 @@ class DefaultController extends Controller
     public function editarPersona(Request $request)
     {
 
-        return new Response("Editando Persona");
+        return $this->render('default/edit_persona.html.twig', array());
 
     }
 

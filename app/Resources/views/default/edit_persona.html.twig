@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Persona</h1>
+
+
+<div>
+    <label for="">Nombre:</label>
+    <input type="text" ng-model="persona_nombre" >
+</div>
+<div>
+    <label for="">Apaterno:</label>
+    <input type="text" ng-model="persona_apaterno" >
+
+</div>
+
+<div>
+    <label for="">Amaterno:</label>
+    <input type="text" ng-model="persona_amaterno" >
+
+</div>
+    <button>Guardar</button>
+
+<div>
+    Persona: // persona_nombre // // persona_apaterno // // persona_amaterno //
+</div>
+
+{% endblock %}

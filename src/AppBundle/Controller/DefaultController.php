@@ -68,7 +68,7 @@ class DefaultController extends Controller
     public function editarAlumno()
     {
 
-        return new Response("Editando alumno");
+        return new Response("sisis awebo awebo!!!");
 
     }
 

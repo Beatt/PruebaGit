@@ -73,4 +73,15 @@ class DefaultController extends Controller
     }
 
 
+    /**
+     * @Route("/editar_profesor", name="editar_profesor")
+     */
+    public function editarProfesor()
+    {
+
+        return new Response("Editando profesor");
+
+    }
+
+
 }

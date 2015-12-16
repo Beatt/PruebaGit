@@ -1,37 +1,43 @@
-<div>
+{% extends 'base.html.twig' %}
 
-    <h1>
-        Editando profesor
-    </h1>
-
-</div>
-
-<div>
-
-    <h2>Está es una sección para editar al profesor</h2>
-
-    <form action="">
-
-        <div>
-            <label for="">Nombre</label>
-            <input type="text" name="" ng-model="profesor_nombre">
-        </div>
-
-        <div>
-            <label for="">Apaterno</label>
-            <input type="text" name="" ng-model="profesor_apaterno">
-        </div>
-
-        <button>Guardar</button>
-    </form>
-
+{% block body %}
 
     <div>
 
-        <p>
-            Profesor: // profesor_nombre // // profesor_apaterno //
-        </p>
+        <h1>
+            Editando profesor
+        </h1>
 
     </div>
 
-</div>
+    <div>
+
+        <h2>Está es una sección para editar al profesor</h2>
+
+        <form action="">
+
+            <div>
+                <label for="">Nombre</label>
+                <input type="text" name="" ng-model="profesor_nombre">
+            </div>
+
+            <div>
+                <label for="">Apaterno</label>
+                <input type="text" name="" ng-model="profesor_apaterno">
+            </div>
+
+            <button>Guardar</button>
+        </form>
+
+
+        <div>
+
+            <p>
+                Profesor: // profesor_nombre // // profesor_apaterno //
+            </p>
+
+        </div>
+
+    </div>
+
+{% endblock %}

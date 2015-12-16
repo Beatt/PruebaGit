@@ -79,7 +79,7 @@ class DefaultController extends Controller
     public function editarProfesor()
     {
 
-        return new Response("Editando profesor");
+        return $this->render('default/edit_profesor.html.twig', array());
 
     }
 
